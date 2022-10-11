@@ -10,7 +10,7 @@ cd kubernetesDeployments/metalLB
 ## Create k8s cluster
 1. Kind is used to create k8s cluster
 ```shell
-kind create cluster --name metalLBCluster
+kind create cluster --name metal-lb-cluster
 ``` 
 ## Deploy MetalLB
 1. To deploy metalLB, apply the below manifest
@@ -58,5 +58,5 @@ kubectl delete deployments nginx
 kubectl delete -f l2advertisement.yaml
 kubectl delete -f ipaddresspool.yaml
 kubectl delete -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml
-kind delete cluster --name metalLBCluster
+kind delete cluster --name metal-lb-cluster
 ```
