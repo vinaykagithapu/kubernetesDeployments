@@ -21,6 +21,7 @@ cd kubernetesDeployments/metalLB
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml
 kubectl get all -n metallb-system
 ```
+2. Wait for 2-3 mins to create pods
 
 ## Configuration
 1. To deploy an IPaddress pool, we need IP ranges as node IPs
