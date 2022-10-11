@@ -33,6 +33,7 @@ kubectl get all -n cert-manager
 2. wait of 2 mins
 
 ## Create ClusterIssuer
+1. change the mail address in [clusterissuer.yaml](./clusterissuer.yaml)
 ```shell
 kubectl get crds | grep -i cert-manager
 kubectl apply -f clusterissuer.yaml
