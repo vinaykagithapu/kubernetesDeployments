@@ -71,5 +71,5 @@ kubectl delete service nginx
 kubectl delete deployments nginx
 kubectl delete -f clusterissuer.yaml
 kubectl delete -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml
-helm unistall ingress-nginx -n ingress-nginx
+helm uninstall ingress-nginx -n ingress-nginx
 ```
