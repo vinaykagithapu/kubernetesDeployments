@@ -16,6 +16,7 @@ kind create cluster
 1. To deploy metalLB, apply the below manifest
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml
+kubectl get all -n metallb-system
 ```
 
 ## Configuration
