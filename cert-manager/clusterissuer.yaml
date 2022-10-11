@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt-staging
 spec:
   acme:
-    email: cyber.warrior9090@gmail.com
+    email: samplemail@email.com
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-staging
