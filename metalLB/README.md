@@ -44,3 +44,13 @@ kubectl get svc
 export LB_IP=$(kubectl get service nginx -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 echo http://$LB_IP
 ```
+
+# CleanUp
+```shell
+kubectl delete service nginx
+kubectl delete deployments nginx
+kubectl delete -f l2advertisement.yaml
+kubectl delete -f ipaddresspool.yaml
+kubectl delete -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml
+kind delete cluster
+```
