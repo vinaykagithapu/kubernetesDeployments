@@ -7,6 +7,11 @@
 1. [Click here](https://github.com/vinaykagithapu/kubernetesDeployments/blob/main/metalLB/README.md) to setup k8s cluster. 
 
 # Getting started
+1. clone the repo
+```shell
+git clone https://github.com/vinaykagithapu/kubernetesDeployments.git
+cd kubernetesDeployments/cert-manager
+```
 ## Deploy Nginx Ingress Controller
 1. Nginx ingress controller is deployed with the helm chart
 ```shell
