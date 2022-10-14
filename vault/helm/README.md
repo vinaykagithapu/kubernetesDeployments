@@ -67,4 +67,5 @@ kubectl -n vault port-forward service/vault-ui 8200:8200
 ```shell
 helm uninstall vault -n vault
 helm uninstall consul -n vault
+kind delete cluster --name vault-cluster
 ```
