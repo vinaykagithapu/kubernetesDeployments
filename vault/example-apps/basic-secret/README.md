@@ -50,14 +50,18 @@ exit
 ```
 
 ## Testing
-1. Lets deploy app and see if it works:
+1. Clone the repo
+```shell
+git clone https://github.com/vinaykagithapu/kubernetesDeployments.git
+cd kubernetesDeployments/vault/example-apps/basic-secret/
+```
+2. Lets deploy app and see if it works:
 ```shell
 kubectl create ns example-app
 kubectl -n example-app apply -f deployment.yaml
 kubectl -n example-app get pods
 ```
-2. Once the pod is ready, the secret is injected into the pod at the following location:
-
+3. Once the pod is ready, the secret is injected into the pod at the following location:
 ```shell
 kubectl -n example-app get pod
 kubectl -n example-app exec <pod-name> -- sh -c "cat /vault/secrets/helloworld"
