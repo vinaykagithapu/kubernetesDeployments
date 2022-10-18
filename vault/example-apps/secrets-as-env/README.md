@@ -20,27 +20,26 @@ issuer="https://kubernetes.default.svc.cluster.local"
 exit
 ```
 ## Setup a policy.
-1. Create a role for app.
+1. Create a policy to map service account to secrets..
 ```shell
 kubectl -n vault exec -it vault-0 -- sh 
 vault login
 # Login with root taken
 
-vault write auth/kubernetes/role/basic-secret-role \
-   bound_service_account_names=basic-secret \
-   bound_service_account_namespaces=example-app \
-   policies=basic-secret-policy \
-   ttl=1h
-```
-2. The above maps Kubernetes service account, used by pod, to a policy.
-3. Now lets create the policy to map service account to a bunch of secrets.
-```shell
 cat <<EOF > /home/vault/app-policy.hcl
 path "secret/basic-secret/*" {
   capabilities = ["read"]
 }
 EOF
 vault policy write basic-secret-policy /home/vault/app-policy.hcl
+```
+2. Now lets create a role that maps Kubernetes service account, used by pod, to a policy.
+```shell
+vault write auth/kubernetes/role/basic-secret-role \
+   bound_service_account_names=basic-secret \
+   bound_service_account_namespaces=example-app \
+   policies=basic-secret-policy \
+   ttl=1h
 ```
 4. Now service account for pod can access all secrets under `secret/basic-secret/*`
 
