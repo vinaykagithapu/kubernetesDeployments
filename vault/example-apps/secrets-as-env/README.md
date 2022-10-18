@@ -27,27 +27,27 @@ vault login
 # Login with root taken
 
 cat <<EOF > /home/vault/app-policy.hcl
-path "secret/basic-secret/*" {
+path "secret/secrets-as-env/*" {
   capabilities = ["read"]
 }
 EOF
-vault policy write basic-secret-policy /home/vault/app-policy.hcl
+vault policy write secrets-as-env-policy /home/vault/app-policy.hcl
 ```
 2. Now lets create a role that maps Kubernetes service account, used by pod, to a policy.
 ```shell
-vault write auth/kubernetes/role/basic-secret-role \
-   bound_service_account_names=basic-secret \
+vault write auth/kubernetes/role/secrets-as-env-role \
+   bound_service_account_names=secrets-as-env \
    bound_service_account_namespaces=example-app \
-   policies=basic-secret-policy \
+   policies=secrets-as-env-policy \
    ttl=1h
 ```
-4. Now service account for pod can access all secrets under `secret/basic-secret/*`
+4. Now service account for pod can access all secrets under `secret/secrets-as-env/*`
 
 ## Create Secrets
 1. Lets create some secrets.
 ```shell
 vault secrets enable -path=secret/ kv
-vault kv put secret/basic-secret/helloworld username=dbuser password=P@ssw0rd1!
+vault kv put secret/secrets-as-env/helloworld username=dbuser password=P@ssw0rd1!
 exit
 ```
 
