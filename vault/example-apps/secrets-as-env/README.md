@@ -55,7 +55,7 @@ exit
 1. Clone the repo
 ```shell
 git clone https://github.com/vinaykagithapu/kubernetesDeployments.git
-cd kubernetesDeployments/vault/example-apps/basic-secret/
+cd kubernetesDeployments/vault/example-apps/secrets-as-env/
 ```
 2. Lets deploy app and see if it works:
 ```shell
@@ -66,7 +66,7 @@ kubectl -n example-app get pods
 3. Once the pod is ready, the secret is injected into the pod at the following location as environment variables:
 ```shell
 kubectl -n example-app get pod
-kubectl -n example-app exec <pod-name> -- sh
+kubectl -n example-app -it exec <pod-name> -- sh
 cat /vault/secrets/helloworld
 source /vault/secrets/helloworld
 echo $USERNAME $PASSWORD
