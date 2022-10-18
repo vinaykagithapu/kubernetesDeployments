@@ -8,7 +8,7 @@
 ### Create k8s cluster
 1. Kind is used to create k8s cluster
 ```shell
-kind create cluster --name vault-csi-cluster
+kind create cluster --name vault-csi-cluster --config kind-config.yaml
 ```
 
 # Getting Started
