@@ -3,18 +3,17 @@
 2. Vault comes with various pluggable components called secrets engines and authentication methods allowing you to integrate with external systems.
 3. The purpose of those components is to manage and protect your secrets in dynamic infrastructure (e.g. database credentials, passwords, API keys).
 
-## Requirements
-### Create k8s cluster
-1. Kind is used to create k8s cluster
-```shell
-kind create cluster --name vault-cluster --config kind-config.yaml
-```
-
 # Getting Started
 1. Clone the repo
 ```shell
 git clone https://github.com/vinaykagithapu/kubernetesDeployments.git
 cd kubernetesDeployments/vault/helm
+```
+
+### Create k8s cluster
+1. Kind is used to create k8s cluster
+```shell
+kind create cluster --name vault-cluster --config kind-config.yaml
 ```
 
 ## Install Vault

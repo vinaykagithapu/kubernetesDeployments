@@ -4,18 +4,17 @@
 3. The purpose of those components is to manage and protect your secrets in dynamic infrastructure (e.g. database credentials, passwords, API keys).
 4. CSI driver creates volume that contains secret will be mounted to an application pod.
 
-## Requirements
-### Create k8s cluster
-1. Kind is used to create k8s cluster
-```shell
-kind create cluster --name vault-csi-cluster --config kind-config.yaml
-```
-
 # Getting Started
 1. Clone the repo
 ```shell
 git clone https://github.com/vinaykagithapu/kubernetesDeployments.git
 cd kubernetesDeployments/vault/vault-csi
+```
+
+## Create k8s cluster
+1. Kind is used to create k8s cluster
+```shell
+kind create cluster --name vault-csi-cluster --config kind-config.yaml
 ```
 
 ## Install Vault
