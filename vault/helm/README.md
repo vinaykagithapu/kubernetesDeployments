@@ -7,7 +7,7 @@
 ### Create k8s cluster
 1. Kind is used to create k8s cluster
 ```shell
-kind create cluster --name vault-cluster
+kind create cluster --name vault-cluster --config kind-config.yaml
 ```
 
 # Getting Started
@@ -60,9 +60,9 @@ kubectl -n vault port-forward service/vault-ui 8200:8200
 2. Acces UI at http://127.0.0.1:8200/ui/
 3. Login with the root token copied earlier.
 
-## Basic Secret Injection using Annotations
+## Secret Injection using Annotations
 1. [Click here](../example-apps/basic-secret/README.md) to setup basic secret injection using vault annotation.
-
+2. [Click here](../example-apps/secrets-as-env/README.md) to setup secrets as environment variable within the pod.
 # CleanUp
 ```shell
 helm uninstall vault -n vault
