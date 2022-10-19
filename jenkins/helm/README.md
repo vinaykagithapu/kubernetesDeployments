@@ -3,7 +3,7 @@ Jenkins is an open source automation server. It helps automate the parts of soft
 
 ## Requirements 
 1. Kubernetes ([Kubernetes Installation](https://github.com/vinaykagithapu/dockerDepolyments/tree/main/k8s-cluster-kind))
-2. Helm ([Helm Installation](../README.md#install-helm))
+2. Helm ([Helm Installation](../helm/README.md#install-helm))
 
 # Getting Started
 ## Deploy Jenkins Helm Chart from Repo
