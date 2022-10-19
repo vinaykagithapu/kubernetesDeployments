@@ -55,6 +55,9 @@ Full name        : Administrator
 E-mail address   : admin@test.com
 ```
 
+## Post Installation
+1. [Click here](https://github.com/vinaykagithapu/jenkins/blob/main/README.md#post-installation) for post installation setup.
+
 # CleanUp
 1. Uninstall jenkins deployment
 ```shell
